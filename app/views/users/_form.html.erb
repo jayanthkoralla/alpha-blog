@@ -1,0 +1,21 @@
+<%= form_with(model: @user,local: true) do |form| %>
+<%= form.label :username %> <br>
+<%= form.text_field :username %>
+<% @user.errors.full_messages_for(:title).each do |message| %>
+  <div><%= message %></div>
+<% end %>
+<br><br>
+<%= form.label :email %> <br>
+<%= form.email_field :email %> 
+<% @user.errors.full_messages_for(:description).each do |message| %>
+  <div><%= message %></div>
+<% end %>
+<br><br>
+<%= form.label :password %> <br>
+<%= form.password_field :password %> <br><br>
+<br>
+<%= form.submit %>
+<br><br>
+<%= link_to "Cancel and Go Back",articles_path %>
+<% end %>
+<br><br>
