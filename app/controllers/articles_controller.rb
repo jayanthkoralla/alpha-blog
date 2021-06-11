@@ -7,7 +7,7 @@ class ArticlesController < ApplicationController
   end
   def create
     @article=Article.new(params.require(:article).permit(:title,:description))
-    @article.user_id = User.first.id
+    @article.user_id = User.last.id
     @article.save
     if(@article.save)
       redirect_to @article
