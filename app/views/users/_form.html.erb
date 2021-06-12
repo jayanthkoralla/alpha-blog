@@ -18,7 +18,7 @@
 <% end %>
 
 <br>
-<%= form.submit "Sign up" %>
+<%= form.submit (@user.new_record? ? "Sign up" : "Update account") %>
 <br><br>
 <%= link_to "Cancel and Go Back",articles_path %>
 <% end %>
