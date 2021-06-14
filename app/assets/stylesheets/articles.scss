@@ -1,6 +1,18 @@
 // Place all the styles related to the articles controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
-.show{
-  display: flex;
+.articles-table{
+  text-align: center;
+  border: 1px black solid;
+  height: 300px;
+  width:300px;
+  margin-left: auto;
+  margin-right: auto;
 }
+h1{
+ text-align: center;
+}
+.new-article{
+  margin: auto;
+  text-align: center;
+  }

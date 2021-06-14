@@ -13,3 +13,6 @@
  *= require_tree .
  *= require_self
  */
+.app-table{
+  width: 500px;
+}

@@ -2,10 +2,16 @@
 <tr>
 <div class="show">
 <td><h2>Created By :</h2></td>
-<td><h2><%= @article.user.username %></h2></td>
+<td><h2>
+<%if @article.user %>
+<%= link_to @article.user.username,user_path(@article.user) %>
+<% end %>
+
+</h2></td>
 </div>
 </tr>
 <tr>
+
 <div class="show"> 
 <td><h2>Title :</h1></td>
 <td><h2><%= @article.title %></h2></td> 
@@ -19,6 +25,8 @@
 </tr>
 </table>
 <br><br><br>
+<% if logged_in? && @article.user == current_user %>
 <%= link_to "Edit",edit_article_path(@article) %> ||
 <td><%= link_to "Delete",article_path(@article),method: :delete %></td> ||
+<% end %>
 <%= link_to "Go Back",articles_path %>

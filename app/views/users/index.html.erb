@@ -1,0 +1,22 @@
+<h1>List Of Users</h1>
+
+<% @user.each do |user| %>
+<table class="users-table">
+
+<tr><th>UserName</th></tr>
+<tr><td><%= link_to user.username,user_path(user) %> </td></tr>
+
+<tr><th>Email</th></tr>
+<tr><td><%= user.email %></td></tr>
+<tr><th>Total Articles</th></tr>
+<tr><td><%= user.articles.count %></td></tr>
+<tr><th >Actions</th></tr>
+<tr><td><%= link_to "Show",user %></td></tr>
+<% if logged_in? && user ==current_user %>
+<tr><td><%= link_to "Edit",edit_user_path(user) %></td></tr>
+<% end %>
+</table>
+<br><br>
+<% end %>
+
+

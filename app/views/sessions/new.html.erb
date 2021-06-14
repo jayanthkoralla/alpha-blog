@@ -1,0 +1,15 @@
+<div class="users-login">
+<h1>Log In</h1>
+<%= form_with(scope: :session,url: login_path ,local: true) do |form| %>
+<%= form.label :email %> <br>
+<%= form.email_field :email %> 
+<br><br>
+<%= form.label :password %> <br>
+<%= form.password_field :password %> <br><br>
+<br><br>
+<%= form.submit "Log in " %>
+<br><br>
+<%= link_to "Cancel and Go Back",articles_path %>
+<% end %>
+<br><br>
+</div>
